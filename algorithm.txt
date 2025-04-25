@@ -1,0 +1,55 @@
+Questions 1 to 3 take a user's input, and then output a value between 1 and 5. 
+
+q1_expertise:
+
+q2_duration:
+
+q3_difficulty:
+
+
+
+The .csv file contains the name of the hike, and then the distance and the difficulty. 
+
+Hike_name | Difficulty | Length | Location (Distance)
+
+
+-------------PART 1: Filter By Difficulty--------------
+
+
+
+-------------PART 2: Filter By Length--------------
+
+Second, calculate the appropriate "distance" from a user's expertise level and desired duration. 
+expertise_level | pace
+1: 60 min/mile * (1 + 0.5*int(difficulty_level)) #the 0.5 is a rate that can be adjusted
+2: 50 min/mile * (1 + 0.5*int(difficulty_level))
+3: 45 min/mile * (1 + 0.5*int(difficulty_level))
+4: 38 min/mile * (1 + 0.5*int(difficulty_level))
+5: 34 min/mile * (1 + 0.5*int(difficulty_level))
+
+acceptable_hikes = []
+
+farthest_user_can_go = duration (in minutes) / pace (in min/mile)
+
+for trail in trails:
+    if trail[length] - farthest_user_can_go <= 3: #3 is an arbitrary value
+        acceptable_hikes.append(hike)
+    
+        
+-------------PART 3--------------
+Now, present a list of hikes that fit the above criteria, ranked by distance from the user.
+
+
+
+
+
+
+
+
+
+
+OVERALL PROCESS:
+- First, have a full list of hikes. 
+- use remove(list) for hikes that don't fit the difficulty profile
+- use remove(list) for hikes that don't fit the length requirements
+- give user a list of hikes ranked by distance from the user.
